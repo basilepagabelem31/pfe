@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('titre');
             $table -> enum("status",["active","archive"])->default("active");
             $table->timestamps();
+            
         });
     }
 

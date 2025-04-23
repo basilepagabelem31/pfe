@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('intern_sujet_pivots', function (Blueprint $table) {
             $table->id();
-            $table ->unsignedBigInteger("intern_id");
-            $table ->unsignedBigInteger("sujet_id");
+           
 
             $table -> foreignId("intern_id")->constrained("utilisateurs")->onDelete("cascade");
             $table -> foreignId("sujet_id")->constrained("sujets")->onDelete("cascade");

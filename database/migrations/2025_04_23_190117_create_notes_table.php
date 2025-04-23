@@ -22,8 +22,7 @@ return new class extends Migration
                 "superviseurs- stagiaire"
             ])->default("all");
             $table ->datetime("date_note");
-            $table->unsignedBigInteger("stagiaire_id");
-            $table ->unsignedBigInteger("donneur_id");
+           
 
             $table->foreignId("stagiaire_id")->constrained("utilisateurs")->onDelete("cascade");
             $table->foreignId("donneur_id")->constrained("utilisateurs")->onDelete("cascade");

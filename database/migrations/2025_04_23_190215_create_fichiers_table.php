@@ -16,9 +16,7 @@ return new class extends Migration
             $table -> string('titre');
             $table -> text("description");
             $table -> string('chemin');
-            $table ->unsignedBigInteger("user_id");
-            $table ->unsignedBigInteger("sujet_id");
-            $table ->unsignedBigInteger("uploaded_by");
+          
 
             $table -> foreignId("user_id")->constrained("utilisateurs")->onDelete("cascade");
             $table -> foreignId("sujet_id")->constrained("sujets")->onDelete("cascade");

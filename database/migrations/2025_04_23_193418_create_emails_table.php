@@ -16,6 +16,7 @@ return new class extends Migration
             $table ->string('adresse_exp');
             $table -> integer('port');
             $table ->string('protocole');
+            
             $table->timestamps();
         });
     }

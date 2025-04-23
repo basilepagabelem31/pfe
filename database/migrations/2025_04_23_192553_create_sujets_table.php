@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string("titre");
             $table->text("description");
-            $table->unsignedBigInteger("promotion_id");
-            $table->unsignedBigInteger("groupe_id");
-
-            $table -> foreignId("promotion_id")->constrained("promotions")->onDelete("cascade");
-            $table -> foreignId("groupe_id")->constrained("groupes")->onDelete("cascade");
-
-
+        
+            $table->foreignId("promotion_id")->constrained("promotions")->onDelete("cascade");
+            $table->foreignId("groupe_id")->constrained("groupes")->onDelete("cascade");
+        
             $table->timestamps();
         });
     }

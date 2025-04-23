@@ -12,13 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('demande_coequipiers', function (Blueprint $table) {
-            $table->id();
-            $table ->unsignedBigInteger("stagiaire_id");
-            $table -> unsignedBigInteger("destinateur_id");
-            $table->timestamps();
-
             $table->foreignId("stagiaire_id")->constrained("utilisateurs")->onDelete("cascade");
-            $table-> foreignId("destinateur_id")->constrained("utilisateurs")->onDelete("cascade");
+            $table->foreignId("destinateur_id")->constrained("utilisateurs")->onDelete("cascade");
+            $table->timestamps();
         });
     }
 
