@@ -13,17 +13,14 @@ return new class extends Migration
     {
         Schema::create('fichiers', function (Blueprint $table) {
             $table->id();
-            $table -> string('titre');
-            $table -> text("description");
-            $table -> string('chemin');
-          
-
-            $table -> foreignId("user_id")->constrained("utilisateurs")->onDelete("cascade");
-            $table -> foreignId("sujet_id")->constrained("sujets")->onDelete("cascade");
-            $table -> foreignId("uploaded_by")->constrained("utilisateurs")->onDelete("cascade");
-
-
-
+            $table->string('titre');
+            $table->text('description');
+            $table->string('chemin');
+            
+            // Déclaration des clés étrangères avec contraintes
+            $table->foreignId('user_id')->constrained('utilisateurs')->onDelete('cascade');
+            $table->foreignId('sujet_id')->constrained('sujets')->onDelete('cascade');
+            $table->foreignId('uploaded_by')->constrained('utilisateurs')->onDelete('cascade');
 
             $table->timestamps();
         });
